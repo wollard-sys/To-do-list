@@ -1,0 +1,99 @@
+:root{
+  --bg:#fff7ef;
+  --card:#ffffff;
+  --accent1:#ffb74d;
+  --accent2:#ff8a80;
+  --accent3:#80deea;
+  --text:#2b2b2b;
+  --muted:#6b6b6b;
+  --radius:14px;
+  --shadow: 0 8px 24px rgba(43,43,43,0.12);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:linear-gradient(180deg,var(--bg),#fffdf8);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  line-height:1.45;
+}
+
+
+.site-header{
+  background:linear-gradient(90deg,var(--accent3),var(--accent1));
+  color:#111;
+  padding:28px 16px;
+  clip-path: ellipse(100% 85% at 50% 0%);
+}
+.header-inner{max-width:1200px;margin:0 auto}
+.site-header h1{margin:0;font-size:1.9rem;color:#00323a}
+.subheading{margin:6px 0 0;color:rgba(0,0,0,0.65);font-weight:600}
+.subheading a{color:rgba(0,0,0,0.9);text-decoration:underline}
+
+
+.container{max-width:1200px;margin:28px auto;padding:0 16px}
+.cards{display:grid;gap:20px;grid-template-columns:repeat(1,1fr)}
+
+
+.card{
+  background:linear-gradient(180deg, rgba(255,255,255,0.95), var(--card));
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  display:flex;
+  flex-direction:column;
+}
+.img-link{display:block}
+.card img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+  display:block;
+  transition:transform .28s ease;
+}
+.img-link:hover img{transform:scale(1.03)}
+.card-body{padding:18px}
+.card-body h2{margin:0 0 8px;color:#0f2f2f}
+
+
+.details-box{
+  margin-top:10px;
+  background:linear-gradient(180deg, rgba(255,255,255,0.9), #fff);
+  border-radius:10px;
+  padding:12px;
+  border:1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 6px 18px rgba(12,12,12,0.06);
+}
+.details-box h3{margin:8px 0;color:var(--accent2)}
+.details-box p, .details-box ul, .details-box ol{margin:6px 0 0;padding-left:18px;color:var(--muted)}
+
+
+.site-footer{text-align:center;padding:18px;color:var(--muted);font-size:0.95rem}
+
+
+@media (min-width:600px){
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .card img{height:180px}
+  .site-header h1{font-size:2.2rem}
+}
+
+@media (min-width:900px){
+  .cards{grid-template-columns:repeat(3,1fr)}
+  .card img{height:160px}
+}
+
+@media (min-width:1200px){
+  .cards{grid-template-columns:repeat(4,1fr)}
+  .card img{height:140px}
+  .site-header{padding:40px 16px}
+  .site-header h1{font-size:2.6rem}
+}
+
+@media (min-width:1600px){
+  :root{--radius:16px}
+  .container{max-width:1400px}
+  .card img{height:180px}
+}
